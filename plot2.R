@@ -6,9 +6,11 @@ period <- c("1/2/2007","2/2/2007")
 data <- file[file$Date %in% period,]
 # getting data as numeric only about global active power
 globalActivePower <- as.numeric(data$Global_active_power)
+datetime <- paste(data$Date, data$Time, sep = " ")
+formdate <- strptime(datetime, "%d/%m/%Y %H:%M:%S")
 # making png graphics device
-png("plot1.png", width=480, height=480)
+png("plot2.png", width=480, height=480)
 # drawing histogram according to task
-hist(globalActivePower, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+plot(formdate, globalActivePower, type = "l" , xlab ='', ylab="Global Active Power (kilowatts)")
 # shut down device
 dev.off()
