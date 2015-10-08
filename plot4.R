@@ -17,7 +17,9 @@ datetime <- paste(data$Date, data$Time, sep = " ")
 formdate <- strptime(datetime, "%d/%m/%Y %H:%M:%S")
 # making png graphics device
 png("plot4.png", width=480, height=480)
-par(mfrow = c(2,2))
+# mfrow - for several plots in one png device
+# 'bg' = 'transparent' according to example unnamed-chunk-5.png
+par(mfrow = c(2,2), 'bg' = 'transparent')
 # drawing plots according to task
 # first plot - globalActivePower data
 plot(formdate, globalActivePower, type = "l", xlab ='', ylab="Global Active Power")

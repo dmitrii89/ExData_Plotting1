@@ -14,6 +14,8 @@ datetime <- paste(data$Date, data$Time, sep = " ")
 formdate <- strptime(datetime, "%d/%m/%Y %H:%M:%S")
 # making png graphics device
 png("plot3.png", width=480, height=480)
+# transparent background according to example unnamed-chunk-4.png
+par('bg' = 'transparent')
 # drawing plot according to task
 plot(formdate, submet1, type = "l" , col="black", xlab ='', ylab="Energy sub metering")
 lines(formdate, submet2, type = "l", col="red" )

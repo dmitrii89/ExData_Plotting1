@@ -8,6 +8,8 @@ data <- file[file$Date %in% period,]
 globalActivePower <- as.numeric(data$Global_active_power)
 # making png graphics device
 png("plot1.png", width=480, height=480)
+# transparent background according to example unnamed-chunk-2.png
+par('bg' = 'transparent')
 # drawing histogram according to task
 hist(globalActivePower, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
 # shut down device

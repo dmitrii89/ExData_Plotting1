@@ -12,6 +12,8 @@ datetime <- paste(data$Date, data$Time, sep = " ")
 formdate <- strptime(datetime, "%d/%m/%Y %H:%M:%S")
 # making png graphics device
 png("plot2.png", width=480, height=480)
+# transparent background according to example unnamed-chunk-3.png
+par('bg' = 'transparent')
 # drawing plot according to task
 plot(formdate, globalActivePower, type = "l" , xlab ='', ylab="Global Active Power (kilowatts)")
 # shut down device
